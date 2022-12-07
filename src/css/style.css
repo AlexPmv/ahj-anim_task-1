@@ -1,0 +1,90 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 50px;
+}
+
+.collapse__wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 500px;
+  overflow: hidden;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+
+.button__wrapper {
+  background-color: lightgray;
+}
+
+.collapse__button {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  background-color: #1E90FF;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.collapse__text {
+  position: absolute;
+  max-height: 0;
+  transform: scaleY(0);
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.animation {
+  position: relative;
+  transform: scaleY(1);
+  animation-name: collapse;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.animation-reverse {
+  position: relative;
+  transform: scaleY(1);
+  animation-name: collapse-reverse;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes collapse {
+  0% {
+    position: relative;
+    max-height: 0;
+    transform: scaleY(0);
+  }
+  10% {
+    transform: scaleY(1);
+  }
+  100% {
+    max-height: 150px;
+
+  }
+}
+
+@keyframes collapse-reverse {
+  0% {
+    max-height: 150px;
+  }
+  99% {
+    transform: scaleY(1);
+  }
+  100% {
+    max-height: 0;
+    transform: scaleY(0);
+  }
+}
